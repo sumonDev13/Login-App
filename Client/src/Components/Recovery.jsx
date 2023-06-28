@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-
-import { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import { passwordValidate } from "../helper/validate";
 
@@ -29,31 +27,30 @@ const Recovery = () => {
               Enter OTP to recover password
             </span>
           </div>
-          <form className="pt-20" onSubmit={formik.handleSubmit}>
+          <form className="pt-20" >
             <div className="textbox flex flex-col items-center gap-6">
-              <Toaster position="top-center"></Toaster>
-              <span className="py-4 text-sm text-left text-gray-500">Enter 6 digit OTP to recover password</span>
-              <input
-                {...formik.getFieldProps("password")}
-                className={Styles.textbox}
-                type="text"
-                placeholder="Password"
-              ></input>
+              <div className="input text-center">
+                <span className="py-4 text-sm text-left text-gray-500">
+                  Enter 6 digit OTP sent to your email address.
+                </span>
+                <input {...formik.getFieldProps}
+                  //onChange={(e) => setOTP(e.target.value)}
+                  className={Styles.textbox}
+                  type="text"
+                  placeholder="OTP"
+                />
+              </div>
 
               <button className={Styles.btn} type="submit">
-                Sign in
+                Recover
               </button>
             </div>
-
-            <div className="text-center py-4">
-              <span className="text-gray-500">
-                Forgot password?{" "}
-                <Link className="text-red-500" to="/recovery">
-                  Recover Now
-                </Link>
-              </span>
-            </div>
           </form>
+          <div className="text-center py-4">
+            <span className="text-gray-500">
+              Can not get OTP?  <Link  className="text-red-500"> Resend</Link>     
+            </span>
+          </div>
         </div>
       </div>
     </div>
