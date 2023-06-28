@@ -46,7 +46,7 @@ const formik = useFormik({
             </div>
 
             <div className="text-center py-4">
-                <span className="text-gray-500">Forgot password? <Link className='text-red-500' to="/register">Recovery</Link></span>
+                <span className="text-gray-500">Forgot password? <Link className='text-red-500' to="/recovery">Recover Now</Link></span>
             </div>
 
           </form>
